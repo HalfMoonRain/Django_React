@@ -1,2 +1,4 @@
 django~=4.1
 pillow
+django-extensions~=3.2.1
+ipython

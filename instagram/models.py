@@ -13,10 +13,11 @@ class Post(models.Model):
         #return f"Custome Post Object({self.id})"
         return f'{self.message}'
 
+    class Meta:
+        ordering = ['-id'] # id 필드에 대해 역순
+
     # model에 메세지 관련 특성 구현 하는 방법(admin 에서도 구현 가능)
     # def message_length(self):
     #     return len(self.message)
     #
     # message_length.short_description = '메세지 글자수'
-    #
-    #
