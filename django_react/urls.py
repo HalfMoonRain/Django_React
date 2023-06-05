@@ -23,8 +23,10 @@ from django.urls import path, include
 # from askcompany import settings
 # 따라서 다음과 같이 사용해야한다.
 from django.conf import settings
+import debug_toolbar
 
 urlpatterns = [
+    path('__debug__/', include(debug_toolbar.urls)),
     path('admin/', admin.site.urls),
     path('blog1/', include('blog1.urls')),
     path('instagram/', include('instagram.urls'))
