@@ -1,7 +1,9 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import Post, Comment
+from .models import Post, Comment, Tag
+
+
 # Register your models here.
 
 # 첫번째 방법
@@ -17,7 +19,7 @@ from .models import Post, Comment
 
 # 세번 째 방법
 # 데코레이터 이용
-@admin.register(Post) # Wrapping
+@admin.register(Post)  # Wrapping
 class PostAdmin(admin.ModelAdmin):
     list_display = ['id', 'photo_tag', 'message', 'is_public', 'created_at', 'updated_at']
     list_display_links = ['message']
@@ -37,3 +39,7 @@ class PostAdmin(admin.ModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
     pass
 
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    pass
